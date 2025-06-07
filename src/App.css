@@ -1,51 +1,34 @@
-.glass-card {
-  position: relative; /* Add this to make the container a positioning context */
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 40px;
-  width: 90%;
-  max-width: 600px;
-  text-align: center;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-/* Position sign out button top right */
-.sign-out-button {
-  position: absolute;   /* change from relative to absolute */
-  top: 20px;           /* adjust vertical offset */
-  right: 20px;         /* adjust horizontal offset */
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+.tab-buttons button {
+  padding: 10px 20px;
   border: none;
-  border-radius: 30px;
-  padding: 12px 24px;
-  color: white;
-  font-size: 1rem;
+  background: #eee;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  /* keep the existing hover styles as is */
+  font-size: 16px;
+  transition: background 0.3s;
 }
 
-.sign-out-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #fff3, transparent);
-  transform: skewX(-20deg);
-  transition: 0.5s;
+.tab-buttons button.active {
+  background: linear-gradient(to right, #fc466b, #3f5efb);
+  color: white;
 }
 
-.sign-out-button:hover::before {
-  left: 100%;
+.section {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
 }
 
-.sign-out-button:hover {
-  transform: scale(1.05);
+.your-score {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
 }

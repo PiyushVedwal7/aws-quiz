@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import quizData from './quizData';
 import './Quiz.css';
 
-function Quiz() {
+function Quiz({ onSubmitScore }) { // ✅ Accepting a prop
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -20,6 +20,10 @@ function Quiz() {
       const updated = [...highScores, score].sort((a, b) => b - a).slice(0, 5);
       setHighScores(updated);
       localStorage.setItem('highScores', JSON.stringify(updated));
+      
+      if (onSubmitScore) {
+        onSubmitScore(score); // ✅ Notify App.js when quiz ends
+      }
     }
   }, [showScore]);
 
@@ -40,7 +44,7 @@ function Quiz() {
         setSelectedAnswer('');
         setIsCorrect(null);
       } else {
-        setShowScore(true);
+        setShowScore(true); // ✅ Triggers score update
       }
     }, 900);
   };

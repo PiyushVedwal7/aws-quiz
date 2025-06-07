@@ -1,4 +1,5 @@
-body {
+html, body {
+  height: 100%;         /* Make sure html and body take full height */
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, #4facfe, #00f2fe);
@@ -10,7 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 40px;
-  min-height: 100vh;
+  height: 100vh;        /* Use full viewport height */
+  box-sizing: border-box;
 }
 
 .quiz-container {
@@ -21,69 +23,4 @@ body {
   max-width: 700px;
   width: 100%;
   text-align: center;
-}
-
-.question-header {
-  margin-bottom: 20px;
-}
-
-.question-text {
-  font-size: 1.3rem;
-  color: #333;
-  margin-top: 10px;
-}
-
-.options-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.option-btn {
-  padding: 12px 20px;
-  font-size: 1.05rem;
-  background-color: #f0f0f0;
-  border: none;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
-
-.option-btn:hover {
-  background-color: #d6f0ff;
-}
-
-.option-btn.correct {
-  background-color: #c8f7c5;
-}
-
-.option-btn.wrong {
-  background-color: #ffc9c9;
-}
-
-.feedback {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.feedback.correct {
-  color: #28a745;
-}
-
-.feedback.wrong {
-  color: #dc3545;
-}
-
-.score-section h1 {
-  font-size: 2rem;
-  color: #333;
-}
-
-.score-section ul {
-  text-align: left;
-  margin-top: 10px;
-  padding-left: 20px;
-  color: #555;
 }
